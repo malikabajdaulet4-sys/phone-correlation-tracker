@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Correlation Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">PERSONAL ANALYTICS</p>
+      <h1>Phone Correlation Tracker</h1>
+      <p>Track your screen time and discover patterns in your daily habits.</p>
+    </header>
+
+    <section class="card">
+      <h2>Add Daily Data</h2>
+
+      <form id="dataForm">
+        <div class="grid">
+          <label>
+            Date
+            <input id="date" type="date" required>
+          </label>
+
+          <label>
+            Screen time (hours)
+            <input id="screenTime" type="number" min="0" max="24" step="0.1" required>
+          </label>
+
+          <label>
+            Sleep (hours)
+            <input id="sleep" type="number" min="0" max="24" step="0.1" required>
+          </label>
+
+          <label>
+            Study (hours)
+            <input id="study" type="number" min="0" max="24" step="0.1" required>
+          </label>
+
+          <label>
+            Mood (1–10)
+            <input id="mood" type="number" min="1" max="10" required>
+          </label>
+        </div>
+
+        <button type="submit">Add Entry</button>
+      </form>
+    </section>
+
+    <section class="stats">
+      <div class="stat card">
+        <span>Entries</span>
+        <strong id="entries">0</strong>
+      </div>
+
+      <div class="stat card">
+        <span>Average screen time</span>
+        <strong id="avgScreen">0h</strong>
+      </div>
+
+      <div class="stat card">
+        <span>Average mood</span>
+        <strong id="avgMood">0/10</strong>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Correlation Results</h2>
+      <div id="correlations">
+        <p>Add at least two entries to calculate correlations.</p>
+      </div>
+
+      <p class="note">
+        Correlation shows association between variables. It does not prove causation.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Recent Entries</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Screen</th>
+            <th>Sleep</th>
+            <th>Study</th>
+            <th>Mood</th>
+          </tr>
+        </thead>
+
+        <tbody id="tableBody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
